@@ -25,7 +25,7 @@ public class Task_01 {
     private int[][] adjMatrix;
     private Map<Character, List<Character>> adjList;
 
-    public Graph() {
+    public Task_01() {
         adjMatrix = new int[][] {
             {0, 1, 1, 0, 0, 0, 0, 0},
             {1, 0, 0, 1, 1, 0, 0, 0},
@@ -98,3 +98,8 @@ public class Task_01 {
                     return result;
                 }
             }
+        }
+        return null;
+    }
+
+}

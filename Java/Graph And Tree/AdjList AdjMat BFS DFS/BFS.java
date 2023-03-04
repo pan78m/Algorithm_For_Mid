@@ -69,8 +69,22 @@ class BFS {
         }
     }
 
-    public void DFS() {
+    public void DFS(char start) {
+        boolean[] visited = new boolean[NumberOFNodes];
+        Queue<Integer> q = new LinkedList<Integer>();
+        int i = verties.indexOf(start);
+        DFSHelper(i, visited);
+        System.out.println();
 
+    }
+    public void DFSHelper(int a,boolean[] v){
+        v[a] = true;
+        System.out.print(verties.get(a) + " ");
+        for (int i = 0; i <NumberOFNodes; i++) {
+            if (adjMatrix[a][i] && !v[i]) {
+                DFSHelper(i, v);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -107,6 +121,10 @@ class BFS {
 
         System.out.println("BFS: ");
         graph.bfs('S');
+        System.out.println();
+
+        System.out.println("DFS: ");
+        graph.DFS('S');
         System.out.println();
 
     }

@@ -1,3 +1,5 @@
+/* 
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -106,7 +108,9 @@ private boolean DFSPathUtil(int curr, int end, boolean[] visited, int[] path, in
 
     return false;
 }
+*/
 //////
+/* 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -220,14 +224,15 @@ public class Graph {
         System.out.println();
     }
 }
+*/
 /////////////////
 import java.util.*;
 
-public class Graph {
+public class Demo {
     private int V; // number of vertices
     private LinkedList<Integer>[] adjList; // adjacency list
 
-    public Graph(int v) {
+    public Demo(int v) {
         V = v;
         adjList = new LinkedList[v];
         for (int i = 0; i < v; i++) {
@@ -307,7 +312,7 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(8);
+        Demo graph = new Demo(8);
 
         graph.addEdge(0, 1);
         graph.addEdge(1, 3);
