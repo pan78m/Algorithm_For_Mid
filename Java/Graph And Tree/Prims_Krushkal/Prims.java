@@ -21,6 +21,8 @@ public class Prims {
        3     3
        
 
+
+       
        A
       / \
      4    2       D
