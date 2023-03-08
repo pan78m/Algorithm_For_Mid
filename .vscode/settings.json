@@ -2,9 +2,10 @@
     "code-runner.runInTerminal": true,
     "code-runner.saveAllFilesBeforeRun": true,
     "java.project.sourcePaths": [
+        "Java/Number_Pattern",
         "Java/Graph And Tree/Prims_Krushkal",
         "Java/Graph And Tree/BFS_DFS",
         "Java/Graph And Tree/BFS DFS/Java/Graph",
-        "Java/Number_Pattern"
+        "Java"
     ]
 }

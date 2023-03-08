@@ -72,7 +72,7 @@ Ans:O(log2 n)
 for(int i=0;i<n;i++){
   i*=k;
 }
-Ans:O n(infinity)
+Ans:O n(log k base n)
 11.
 int value = 0;
 for(int i=0;i<n;i++)
@@ -82,11 +82,31 @@ Ans O(n^2)
 12.
 function isPrime(n) {
   for (let i = 2; i <= Math.sqrt(n); ++i) {
-      if (n % i === 0) 
+      if (n % i == 0) 
           return false;
   }
   return true;
 }
+The time complexity of your function is O(sqrt(n)). 
+To prove this, you need to count how many times the loop runs as a function of n.
+
+The loop starts with i = 2 and ends when i > sqrt(n). 
+In each iteration, i is incremented by 1. Therefore, 
+the number of iterations of the loop is:
+
+sqrt(n) - 2 + 1 = sqrt(n) - 1
+
+This is because we need to subtract 2 from sqrt(n)
+ to account for the initial value of i and add 1 to include the last value of i. 
+ The statement n % i === 0 takes constant time. 
+ Therefore, the total number of basic operations performed by your function is:
+
+(sqrt(n) - 1) * 1 = sqrt(n) - 1
+
+To express this using big O notation, we ignore coefficients and lower order terms
+ and focus on the highest order term. In this case, it is sqrt(n). 
+ Therefore, your function has a time complexity of O(sqrt(n)).
+
 13.
 let a = 0, b = 0;
 for (let i = 0; i < n; ++i) {
@@ -106,9 +126,9 @@ for (let i = 0; i < n; ++i) {
 }
 for (let k = 0; k < n; ++k) {
     b = b + k;
-    O(k)
+    O(n)
 }
-Ans : O(k+n^2)
+Ans : O(n+n^2)
 15.
 let a = 0;
 for (let i = 0; i < n; ++i) {
@@ -191,11 +211,19 @@ Ans is: O N(log 2 N)
 
 25. 
    5n^3+200n^2+15
+   find time complexity and proved it mathematically?
    3n^2+2^200
+   find time complexity and proved it mathematically?
    5log2 n+15ln n
+   find time complexity and proved it mathematically?
    2log n^3
+   find time complexity and proved it mathematically?
    4n+log n
+   find time complexity and proved it mathematically?
    2^64
+   find time complexity and proved it mathematically?
    log n^10 +2root n
+   find time complexity and proved it mathematically?
    2^n+ n^1000
+   find time complexity and proved it mathematically?
  */
