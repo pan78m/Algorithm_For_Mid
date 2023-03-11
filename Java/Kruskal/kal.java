@@ -35,6 +35,7 @@ public class kal {
         int e = input.nextInt();
         for (int i = 0; i <= N; i++) {
             p.add(i);
+            MakeSet(i);
         }
         for (int i = 0; i < e; i++) {
             Vector<Integer> ed = new Vector<Integer>();

@@ -3,7 +3,7 @@ using namespace std;
  const int N=9999;
  vector <int>p(N);
 void MakeSet(int v){
-
+  
     p[v]=v;
 }
 
@@ -18,7 +18,7 @@ void MakeSet(int v){
     int x=FindSet(a);
     int y=FindSet(b);
     if(x!=y)
-    p[b]=a;
+    p[y]=x;
   }
 
  int main(){
