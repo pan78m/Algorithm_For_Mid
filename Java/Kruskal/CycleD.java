@@ -72,29 +72,3 @@ public class CycleD {
 
 }
 
-/*
- *
- * 
- * }
- * 
- * for (Vector<Integer> i : edges) {
- * int u = i.get(0);
- * int v = i.get(1);
- * int x = findSet(u);
- * int y = findSet(v);
- * if (x == y) {
- * flag = true;
- * cycle++;
- * } else {
- * unionSet(x, y);
- * }
- * }
- * 
- * if (flag) {
- * System.out.println("Cycle: " + cycle);
- * } else {
- * System.out.println("No Cycles");
- * }
- * }
- * }
- */

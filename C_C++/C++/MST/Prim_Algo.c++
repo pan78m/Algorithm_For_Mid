@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+/*#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -20,7 +20,7 @@ int main(){
     cout<<cost;
     return 0;
 }
-/*
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -91,5 +91,4 @@ int main()
     cout << cost;
 }
 
-cost: 0+5+10+2
-*/
+//cost: 0+5+10+2

@@ -25,6 +25,7 @@ void MakeSet(int v){
    int Cycle=0;
    int cost=0;
    vector<vector<int>>edges;
+   bool flag=false;
    
    int vertex,e;
    cin>>vertex>>e;
@@ -36,7 +37,7 @@ void MakeSet(int v){
    int u,v,w;
    for(int i=0;i<e;i++){
    // int u,v,w;
-    cin>>w>>u>>v;
+    cin>>u>>v>>w;
     edges.push_back({w,u,v});
    }
     
@@ -54,9 +55,10 @@ void MakeSet(int v){
      cout<<"Wight: "<<w<<" source-"<<u<<" Destination-"<<v<<endl;
      if(x==y)
      {
-      
-      continue;
       Cycle++; 
+      flag=true;
+      continue;
+      
      }
    
      else
@@ -64,10 +66,10 @@ void MakeSet(int v){
         UnionSet(x,y);  
    }
 
-//    if(flag)
-// cout << "Cycle : "<<Cycle;
-//    else
-// cout << "No Cycles";
+   if(flag)
+cout << "Cycle : "<<Cycle;
+   else
+cout << "No Cycles";
       
       cout<<"\nMinimum Cost: "<<cost;
 
