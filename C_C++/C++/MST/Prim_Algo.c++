@@ -86,7 +86,7 @@ int main()
         
     }
 
-    primMST(1);
+    primMST(2);
 
     cout << cost;
 }

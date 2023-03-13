@@ -102,7 +102,114 @@ int main(){
 9 1  2
 66 3  5
 
-             
+
+        1
+13   /  |   \7
+    /28 | 2   \
+  2 ----6-----3
+  \27  /  \14  /
+ 39\ / 34   \  / 7
+   4  ------- 5
+       36
+
+node  wight
+6 10
+1 2 13
+1 3 7
+1 6 28
+2 6 27
+2 4 39
+3 6 2
+3 5 7
+4 5 36
+4 6 34
+5 6 14 
+
+
+   #include <bits/stdc++.h>
+using namespace std;
+
+#define MAXN 100005
+
+int parent[MAXN], r[MAXN];
+vector<pair<int, pair<int, int>>> edges;
+
+// Disjoint-set operations
+void makeSet(int n) {
+    for (int i = 0; i <= n; i++) {
+        parent[i] = i;
+        r[i] = 0;
+    }
+}
+
+int findSet(int x) {
+    if (parent[x] != x)
+        parent[x] = findSet(parent[x]);
+    return parent[x];
+}
+
+void unionSets(int x, int y) {
+    int px = findSet(x), py = findSet(y);
+    if (r[px] < r[py])
+        parent[px] = py;
+    else if (r[px] > r[py])
+        parent[py] = px;
+    else {
+        parent[py] = px;
+        r[px]++;
+    }
+}
+
+// Kruskal's algorithm
+int kruskal(int n) {
+    makeSet(n);
+    sort(edges.begin(), edges.end());
+    int cost = 0;
+    for (auto e : edges) {
+        int u = e.second.first, v = e.second.second, w = e.first;
+        if (findSet(u) != findSet(v)) {
+            cost += w;
+            unionSets(u, v);
+        }
+    }
+    return cost;
+}
+
+// Find second best MST
+int secondBestMST(int n) {
+    int mst = kruskal(n); // find the MST first
+    cout<<"1st MST: "+mst;
+    int secondBest = INT_MAX;
+    for (int i = 0; i < edges.size(); i++) {
+        int u = edges[i].second.first, v = edges[i].second.second, w = edges[i].first;
+        if (findSet(u) != findSet(v)) {
+            int oldWeight = w;
+            unionSets(u, v);
+            int newWeight = kruskal(n);
+            if (newWeight < secondBest && newWeight > mst) {
+                secondBest = newWeight;
+            }
+            parent[u] = u; parent[v] = v; // undo union
+            r[u] = r[v] = 0;
+        }
+    }
+    return secondBest;
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m; // number of vertices and edges
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        edges.push_back({w, {u, v}});
+    }
+    int secondBest = secondBestMST(n);
+
+    cout << "The weight of the second-best minimum spanning tree is: " << secondBest << endl;
+    return 0;
+}
+           
 
 
 
