@@ -1,5 +1,4 @@
 // minimum depth
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node
@@ -55,6 +54,7 @@ int main()
     return 0;
 }
 /*
+input graph
     3
    / \
   /   \
@@ -62,5 +62,7 @@ int main()
       /  \
      /    \
     15     7
+    
+    output graph: 2
 
   */
