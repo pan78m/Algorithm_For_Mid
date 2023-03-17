@@ -1,14 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <algorithm>
-#include <limits.h>
+#include <bits/stdc++.h>
 using namespace std;
-
 struct Edge
 {
     int v, weight;
-    Edge(int vv, int ww) : v(vv), weight(ww) {}
+    Edge(int v, int w) : v(v), weight(w) {}
 };
 
 struct Graph
@@ -16,7 +11,6 @@ struct Graph
     int V;
     vector<vector<Edge>> adj;
 };
-
 int count_msts(Graph &g)
 {
     int count = 0;
@@ -101,14 +95,14 @@ int count_msts(Graph &g)
 
 int main()
 {
-    int V = 5;
+    int V = 4;
     Graph g;
     g.V = V;
     g.adj = vector<vector<Edge>>(V);
 
     g.adj[0].push_back(Edge(1, 2));
     g.adj[1].push_back(Edge(0, 2));
-
+    
     g.adj[0].push_back(Edge(2, 3));
     g.adj[2].push_back(Edge(0, 3));
 
@@ -117,14 +111,10 @@ int main()
 
     g.adj[1].push_back(Edge(3, 4));
     g.adj[3].push_back(Edge(1, 4));
-
+    
     g.adj[2].push_back(Edge(3, 5));
-    g.adj[2].push_back(Edge(4, 6));
-    g.adj[4].push_back(Edge(2, 6));
-
-    g.adj[3].push_back(Edge(4, 7));
-    g.adj[4].push_back(Edge(3, 7));
-
+    g.adj[3].push_back(Edge(2, 5));
+    
     int msts = count_msts(g);
     cout << "Number of distinct minimum spanning trees: " << msts << endl;
 

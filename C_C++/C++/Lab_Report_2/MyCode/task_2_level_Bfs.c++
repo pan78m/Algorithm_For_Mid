@@ -1,8 +1,6 @@
-
 // find the level
 #include <bits/stdc++.h>
 using namespace std;
-
 const int N = 999;
 vector<int> adj[N];
 vector<int> vis(N);
@@ -25,8 +23,7 @@ void printAdj(int n)
     }
 }
 void bfs(int source)
-{
-    // create pair first position is node and second position is level
+{ // create pair first position is node and second position is level
     queue<pair<int, int>> q;
     // node,level
     q.push({source, 0});
@@ -68,3 +65,12 @@ int main()
   }
     return 0;
 }
+/*
+6 6
+5 0
+4 0
+5 2
+4 1
+2 3
+3 1
+*/

@@ -49,8 +49,8 @@ int main()
      root->right=new Node(20);
      root->right->left=new Node(15);
      root->right->right=new Node(9);
-
-    cout<<minDepth(root)<<endl;
+     cout<<"Minimum depth:\n";
+     cout<<minDepth(root)<<endl;
     return 0;
 }
 /*

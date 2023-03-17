@@ -5,7 +5,6 @@ const int N = 999;
 vector<int> adj[N];
 // initialize indegree 0
 vector<int> InDegree(N, 0);
-
 // add edges method
 void addEdges(int u, int v)
 {
@@ -18,12 +17,6 @@ bool CheckCycle(int n)
 {
     // create a queue
     queue<int> q;
-    // for(int i=0;i<n;i++){
-    //     for(auto in:adj[i]){
-    //         InDegree[in]++;
-    //     }
-    // }
-    // push all the node which indegree is 0
     for (int i = 0; i < n; i++)
     {
         if (InDegree[i] == 0)
@@ -39,7 +32,7 @@ bool CheckCycle(int n)
         int node = q.front();
         q.pop();
         count++;
-        cout << node << " ";
+       // cout << node << " ";
         // jara node ar sathe connected tader degree 1 kore komay dibo
         for (auto it : adj[node])
         {
@@ -84,11 +77,14 @@ int main()
 }
 
 /*
+
+
+
 6 6
-5 0
-4 0
-5 2
-4 1
+1 2
 2 3
 3 1
+3 5
+3 6
+2 4
 */
